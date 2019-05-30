@@ -113,15 +113,15 @@ export class ContextMenuCanvas {
       .text((item) => (item.getLabel(this.contextMenu.d, this.contextMenu.i, this.contextMenu.elm)))
       .attr("class", "item-label")
       .style("fill", "rgb")
-      .style("font-size", 11)
+      .style("font-size", 18)
       .on('click', (item) => (item.onClick(this.contextMenu.d, this.contextMenu.i, this.contextMenu.elm)))
       .attr('x', '5px')
-      .attr('y', '50%');
+      .attr('y', '70%');
     contextItems.append('text')
       .text((item) => (this.contextMenu.getGroupByParentItem(item) !== null ? '>' : null))
       .attr('x', '100%')
       .attr('y', '50%')
-      .style("font-size", 11)
+      .style("font-size", 18)
       .attr('transform', 'translate(-12, 0)');
 
     this.drawBorder(g);
@@ -137,7 +137,7 @@ export class ContextMenuCanvas {
     const dummyContextItems = dummyContextMenu.enter().append('svg').attr('class', 'dummy-item-entry');
     dummyContextItems.append('text')
       .text((item) => (item.getLabel(this.contextMenu.d, this.contextMenu.i, this.contextMenu.elm) + (this.contextMenu.getGroupByParentItem(item) !== null ? ' >' : '')))
-      .style("font-size", 11)
+      .style("font-size", 18)
       .attr('class', 'dummy-text');
     const dtext = d3.selectAll('.dummy-text');
     const size = {
